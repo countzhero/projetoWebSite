@@ -1,0 +1,97 @@
+create database flowfit;
+use flowfit;
+
+-- Tabela de usuários
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    perfil ENUM('aluno','instrutor','gestor') NOT NULL,
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);S
+
+
+-- Tabela de equipamentos
+CREATE TABLE equipamentos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    categoria VARCHAR(50),
+    tempo_limite INT NOT NULL,
+    status ENUM('Livre','Ocupado','Esgotado') DEFAULT 'Livre'
+);
+
+-- Tabela de utilização
+CREATE TABLE utilizacao (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT,
+    equipamento_id INT,
+    inicio DATETIME,
+    fim DATETIME,
+    status ENUM('Ativo','Finalizado','Tempo Esgotado'),
+
+    FOREIGN KEY(usuario_id)
+    REFERENCES usuarios(id),
+
+    FOREIGN KEY(equipamento_id)
+    REFERENCES equipamentos(id)
+);
+
+-- Equipamento no banco
+INSERT INTO equipamentos
+(nome,categoria,tempo_limite)
+
+VALUES
+
+('Esteira 01','Cardio',30),
+
+('Esteira 02','Cardio',30),
+
+('Supino Reto','Musculação',10),
+
+('Leg Press','Musculação',12);
+
+-- Dashboard do instrutor
+SELECT
+u.nome,
+e.nome AS equipamento,
+TIMESTAMPDIFF(
+MINUTE,
+ut.inicio,
+NOW()
+) AS tempo
+
+FROM utilizacao ut
+
+JOIN usuarios u
+ON u.id = ut.usuario_id
+CREATE TABLE horario_pico (
+
+id INT AUTO_INCREMENT PRIMARY KEY,
+
+hora_inicio TIME,
+
+hora_fim TIME
+);
+JOIN equipamentos e
+ON e.id = ut.equipamento_id
+
+WHERE ut.status='Ativo';
+
+-- Tabela horário de pico
+CREATE TABLE horario_pico (
+
+id INT AUTO_INCREMENT PRIMARY KEY,
+
+hora_inicio TIME,
+
+hora_fim TIME
+);
+
+-- Inserir horário de pico
+INSERT INTO horario_pico
+(hora_inicio,hora_fim)
+
+VALUES
+
+('00:00:00','23:59:00');
