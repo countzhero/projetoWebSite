@@ -1,0 +1,160 @@
+body{
+
+font-family:Arial;
+background:#f5f5f5;
+margin:0;
+
+}
+
+header{
+
+background:#111827;
+padding:20px;
+color:white;
+
+}
+
+nav a{
+
+color:white;
+margin-right:20px;
+text-decoration:none;
+
+}
+
+.hero{
+
+padding:80px 20px;
+text-align:center;
+
+}
+
+.btn{
+
+background:#050505;
+padding:15px 25px;
+color:white;
+border-radius:10px;
+text-decoration:none;
+
+}
+
+.cards{
+
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+
+}
+
+.card{
+
+width:300px;
+background-color: #e7e551;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px #ccc;
+
+}
+
+button{
+
+background:#22c55e;
+border:none;
+padding:12px;
+color:white;
+cursor:pointer;
+
+}
+
+#cronometro{
+
+font-size:40px;
+text-align:center;
+margin-top:30px;
+
+}
+
+.alerta{
+
+background:#ffcccc;
+
+}
+
+.painel-tv{
+
+font-size:30px;
+padding:20px;
+
+}
+
+.equip{
+
+background:white;
+padding:15px;
+margin:10px;
+
+}
+
+table{
+
+width:100%;
+background:white;
+border-collapse:collapse;
+
+}
+
+td,th{
+
+padding:12px;
+border:1px solid #ddd;
+
+}
+
+@media(max-width:768px){
+
+.cards{
+flex-direction:column;
+align-items:center;
+}
+
+.card{
+    width:90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #111827;
+}
+
+.hero h2{
+font-size:28px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+table{
+display:block;
+overflow-x:auto;
+}
+
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #111827;
+}
+
+.funcionalidades {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+    align-items: center;
+    
+}
