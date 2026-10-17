@@ -1,6 +1,6 @@
 # projetoWebSite
-<h1>🏋️ FlowFit</h1>
-<h1>Plataforma Inteligente para Gestão de Academias</h1>
+<h1>🏋️ FlowFit</h1> 
+<h2> Plataforma Inteligente para Gestão de Academias </h2>
 
 A Plataforma Inteligente para Gestão de Academias tem como objetivo otimizar a
 utilização dos equipamentos, reduzir filas, melhorar a experiência dos alunos e
